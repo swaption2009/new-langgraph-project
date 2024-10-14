@@ -1,17 +1,20 @@
 """Define the state structures for the agent."""
 
-from __future__ import annotations
+# from __future__ import annotations
+# from dataclasses import dataclass
 
-from dataclasses import dataclass
+# @dataclass
+# class State:
+#     """Defines the input state for the agent, representing a narrower interface to the outside world.
 
+#     This class is used to define the initial state and structure of incoming data.
+#     See: https://langchain-ai.github.io/langgraph/concepts/low_level/#state
+#     for more information.
+#     """
 
-@dataclass
-class State:
-    """Defines the input state for the agent, representing a narrower interface to the outside world.
+#     changeme: str = "example"
 
-    This class is used to define the initial state and structure of incoming data.
-    See: https://langchain-ai.github.io/langgraph/concepts/low_level/#state
-    for more information.
-    """
+from typing_extensions import TypedDict
 
-    changeme: str = "example"
+class State(TypedDict):
+    graph_state: str
